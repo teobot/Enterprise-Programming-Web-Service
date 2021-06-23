@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://controllers" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://controllers" xmlns:intf="http://controllers" xmlns:tns1="http://models" xmlns:tns2="http://http.servlet.javax" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://controllers" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://http.servlet.javax"/>
+   <import namespace="http://models"/>
+   <element name="updateFilm">
+    <complexType>
+     <sequence>
+      <element name="f" type="tns1:Film"/>
+      <element name="response" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateFilmResponse">
+    <complexType>
+     <sequence>
+      <element name="updateFilmReturn" type="tns1:Film"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://models" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://http.servlet.javax"/>
+   <complexType name="Film">
+    <sequence>
+     <element name="director" nillable="true" type="xsd:string"/>
+     <element name="id" nillable="true" type="xsd:int"/>
+     <element name="rating" nillable="true" type="xsd:int"/>
+     <element name="review" nillable="true" type="xsd:string"/>
+     <element name="stars" nillable="true" type="xsd:string"/>
+     <element name="title" nillable="true" type="xsd:string"/>
+     <element name="year" nillable="true" type="xsd:int"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="updateFilmResponse">
+
+      <wsdl:part element="impl:updateFilmResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateFilmRequest">
+
+      <wsdl:part element="impl:updateFilm" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="FilmUpdateController">
+
+      <wsdl:operation name="updateFilm">
+
+         <wsdl:input message="impl:updateFilmRequest" name="updateFilmRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateFilmResponse" name="updateFilmResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="FilmUpdateControllerSoapBinding" type="impl:FilmUpdateController">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="updateFilm">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateFilmRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateFilmResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="FilmUpdateControllerService">
+
+      <wsdl:port binding="impl:FilmUpdateControllerSoapBinding" name="FilmUpdateController">
+
+         <wsdlsoap:address location="http://localhost:8080/EnterpriseProjectv2/services/FilmUpdateController"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

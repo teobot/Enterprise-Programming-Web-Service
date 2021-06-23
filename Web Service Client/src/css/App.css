@@ -1,0 +1,9 @@
+.version-text {
+    font-size: 12px;
+}
+
+.wrapped{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://controllers" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://controllers" xmlns:intf="http://controllers" xmlns:tns1="http://models" xmlns:tns2="http://ui.springframework.org" xmlns:tns3="http://http.servlet.javax" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://controllers" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://http.servlet.javax"/>
+   <import namespace="http://models"/>
+   <import namespace="http://ui.springframework.org"/>
+   <element name="getAllFilms">
+    <complexType/>
+   </element>
+   <element name="getAllFilmsResponse">
+    <complexType>
+     <sequence>
+      <element name="getAllFilmsReturn" type="tns1:Filmlist"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ArrayOf_xsd_anyType">
+    <sequence>
+     <element maxOccurs="unbounded" minOccurs="0" name="item" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="getFilmsByFormat">
+    <complexType>
+     <sequence>
+      <element name="format" type="xsd:string"/>
+      <element name="responseModel" type="xsd:anyType"/>
+      <element name="response" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getFilmsByFormatResponse">
+    <complexType>
+     <sequence>
+      <element name="getFilmsByFormatReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="retrieveFilm">
+    <complexType>
+     <sequence>
+      <element name="name" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="retrieveFilmResponse">
+    <complexType>
+     <sequence>
+      <element name="retrieveFilmReturn" type="tns1:Filmlist"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://models" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://controllers"/>
+   <import namespace="http://http.servlet.javax"/>
+   <import namespace="http://ui.springframework.org"/>
+   <complexType name="Filmlist">
+    <sequence>
+     <element name="filmList" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+     <element name="filmsList" nillable="true" type="impl:ArrayOf_xsd_anyType"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="retrieveFilmRequest">
+
+      <wsdl:part element="impl:retrieveFilm" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllFilmsResponse">
+
+      <wsdl:part element="impl:getAllFilmsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="retrieveFilmResponse">
+
+      <wsdl:part element="impl:retrieveFilmResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFilmsByFormatResponse">
+
+      <wsdl:part element="impl:getFilmsByFormatResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getFilmsByFormatRequest">
+
+      <wsdl:part element="impl:getFilmsByFormat" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllFilmsRequest">
+
+      <wsdl:part element="impl:getAllFilms" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="FilmSearchController">
+
+      <wsdl:operation name="getAllFilms">
+
+         <wsdl:input message="impl:getAllFilmsRequest" name="getAllFilmsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllFilmsResponse" name="getAllFilmsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getFilmsByFormat">
+
+         <wsdl:input message="impl:getFilmsByFormatRequest" name="getFilmsByFormatRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getFilmsByFormatResponse" name="getFilmsByFormatResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="retrieveFilm">
+
+         <wsdl:input message="impl:retrieveFilmRequest" name="retrieveFilmRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:retrieveFilmResponse" name="retrieveFilmResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="FilmSearchControllerSoapBinding" type="impl:FilmSearchController">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getAllFilms">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllFilmsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllFilmsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getFilmsByFormat">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getFilmsByFormatRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getFilmsByFormatResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="retrieveFilm">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="retrieveFilmRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="retrieveFilmResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="FilmSearchControllerService">
+
+      <wsdl:port binding="impl:FilmSearchControllerSoapBinding" name="FilmSearchController">
+
+         <wsdlsoap:address location="http://localhost:8080/EnterpriseProjectv2/services/FilmSearchController"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
