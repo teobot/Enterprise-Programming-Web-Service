@@ -61,7 +61,7 @@ The Project consists of two distinct applications:
      - [Link to project](https://github.com/teobot/enterprise-client)
 
 ### Project Architecture
-![Project Map](https://github.com/teobot/Enterprise-Programming-Web-Service/blob/main/assets/enterpriseProjectLayout.png?raw=true)
+![Project Map](https://github.com/teobot/Enterprise-Programming-Web-Service/blob/main/assets/enterprisebanner.png?raw=true)
 
 
 ## Project Evaluation
