@@ -43,7 +43,7 @@
 
 ## Project Outline
 The Project consists of two distinct applications:
-- Java Web Service API
+1. Java Web Service API
    - Written in Java
    - Deployed and developed using the Google App Engine Platform
    - Uses the SpringMVC framework
@@ -57,7 +57,7 @@ The Project consists of two distinct applications:
    - Singleton Database Connection
    - Using DAO for data interaction
    - Includes WSDL interface for legacy systems
-- React Web Client
+2. React Web Client
    - Written in Javascript using the React Framework
    - Tracked and developed using Github
      - [Link to project](https://github.com/teobot/enterprise-client)
