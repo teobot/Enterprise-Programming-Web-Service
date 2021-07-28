@@ -1,5 +1,7 @@
 # Enterprise-Programming-Web-Service
 
+![Image of homepage](https://raw.githubusercontent.com/teobot/my-portfolio/main/src/img/Javaweb-min.png)
+
 ## Project Information
 *Github Link*: [Link to project](https://github.com/teobot/Enterprise-Programming-Web-Service)  
 *Full Project Walkthrough* [YouTube Link](https://youtu.be/6IpeEYqHgbI)  
